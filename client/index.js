@@ -1,11 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import { render } from 'react-dom';
+import WikipediaViewer from './components/WikipediaViewer';
 
-import App from './components/App'
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-  )
-})
+render(<WikipediaViewer />, document.getElementById('wikipedia-viewer'));
