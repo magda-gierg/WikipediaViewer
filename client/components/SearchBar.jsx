@@ -12,13 +12,14 @@ export default class SearchBar extends React.Component {
       searchTerm: event.target.value
     });
   }
-
-
+  handleSubmit(event) {
+    event.preventDefault()
+  }
 
   render() {
     return (
-      <div className="search-bar-container" >
-        <form>
+      <div className="search-box-container" >
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <input className="search-bar-text" type="text" placeholder="Search for something" onChange={this.handleInputChange.bind(this)} value={this.state.searchTerm}/>
         </form>
         <p className="random-text"><a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">random article</a></p>
