@@ -1,31 +1,42 @@
 import React from 'react'
 import SearchBar from './SearchBar'
+import ResultList from './ResultList'
 import superagent from 'superagent'
 import jsonp from 'superagent-jsonp'
 
 export default class WikipediaViewer extends React.Component {
   constructor() {
     super()
-    this.state={
-      results: []
+    this.state = {
+            results: [
+                '', [], [], []
+            ]
+        }
     }
-  }
 
-    handleSearch(searchTerm) {
-
+  handleSearch(searchTerm) {
+        superagent.get('https://en.wikipedia.org/w/api.php')
+            .query({
+                search: searchTerm,
+                action: 'opensearch',
+                format: 'json'
+            })
+            .use(jsonp) // use the jsonp plugin
+            .end((error, response) => {
+               if (error) {
+                   console.error(error)
+               } else {
+                   this.setState({ results: response.body })
+               }
+            })
     }
 
     render() {
-        return(
-            <div className="wrapper">
-                <SearchBar onSearch={this.handleSearch.bind(this)}/>
-                <ul>
-                    <li>Result 1</li>
-                    <li>Result 2</li>
-                    <li>Result 3</li>
-                    <li>...</li>
-                </ul>
-            </div>
-        );
-    }
+      return(
+          <div className="wrapper">
+              <SearchBar onSearch={this.handleSearch.bind(this)}/>
+              <ResultList results={this.state.results}/>
+          </div>
+      )
+  }
 }
