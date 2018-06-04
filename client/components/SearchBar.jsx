@@ -13,8 +13,11 @@ export default class SearchBar extends React.Component {
     });
   }
   handleSubmit(event) {
-    event.preventDefault()
-  }
+       event.preventDefault()
+       let searchTerm = this.state.searchTerm.trim() // trim() method removes whitespace from both ends of a string
+            
+       this.props.onSearch(searchTerm)
+   }
 
   render() {
     return (
