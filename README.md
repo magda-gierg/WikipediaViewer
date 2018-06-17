@@ -1,4 +1,4 @@
-freeCodeCamp Project - Build a Wikipedia Viewer
+freeCodeCamp Take Home Projects - Build a Wikipedia Viewer
 
 Objective: Build an app and fulfill the below user stories.
 User Story: I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
@@ -9,7 +9,7 @@ Hint #2: Here's an entry on using Wikipedia's API: https://www.mediawiki.org/wik
 Hint #3: Use this link to experiment with Wikipedia's API.
 
 
-
+https://learn.freecodecamp.org/coding-interview-prep/take-home-projects/build-a-wikipedia-viewer/
 
 
 # A starter webpack project for React
