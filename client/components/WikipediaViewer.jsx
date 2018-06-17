@@ -14,26 +14,6 @@ export default class WikipediaViewer extends React.Component {
         }
     }
 
-  // handleSearch(searchTerm) {
-  //       superagent.get('https://en.wikipedia.org/w/api.php')
-  //           .query({
-  //               search: searchTerm,
-  //               action: 'opensearch',
-  //               format: 'json'
-  //           })
-  //           .use(jsonp)
-  //           .end((error, response) => {
-  //              if (error) {
-  //                  console.error(error)
-  //              } else {
-  //                  this.setState({ results: response.body })
-  //              }
-  //           })
-  //   }
-
-
-
-
     handleSearch(searchTerm) {
         $.ajax({
             type: 'GET',
