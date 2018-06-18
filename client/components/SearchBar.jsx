@@ -32,7 +32,7 @@ export default class SearchBar extends React.Component {
         <input className="search-box-text" type="text" placeholder="search for something..." onChange={this.handleInputChange.bind(this)} value={this.state.searchTerm}/>
       </form>
       <p className="random-text">
-        <small>here you can find a <a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">random article</a>.</small>
+        <small>here you can find a <a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">random article</a></small>
       </p>
     </div>);
   }
